@@ -24,14 +24,8 @@ class Contact
     public function __construct($firstName, array $groups, array $channels)
     {
         $this->firstName = $firstName;
-        $this->groups = array_filter($groups, function ($group) {
-            return $group instanceof Group;
-
-        });
-        $this->channels = array_filter($channels, function ($channel) {
-            return $channel instanceof Channel;
-
-        });
+        $this->groups = $groups;
+        $this->channels = $channels;
     }
 
 

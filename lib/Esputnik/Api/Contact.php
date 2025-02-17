@@ -69,9 +69,7 @@ class Contact extends AbstractApi
     {
         return $this->post('contact/subscribe/', [
             'contact' => $contact,
-            'groups' => array_map(function (Group $group) {
-                return $group->getName();
-            }, $groups),
+            'groups' => $groups,
             'fields' => $fields,
             'dedupeOn' => $dedupeOn,
             'formType' => $formType,
